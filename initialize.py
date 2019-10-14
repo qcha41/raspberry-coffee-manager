@@ -33,7 +33,7 @@ while time.time()-tini < maxDelay :
     else :
         i+=1
         time.sleep(0.1)
-        print(f'Waiting for an internet connection, please wait... (%i)'%round(maxDelay-(time.time()-tini)),end="\r")
+        print('Waiting for an internet connection, please wait... (%i)'%round(maxDelay-(time.time()-tini)),end="\r")
 print('Connected to internet!')
 print()
 

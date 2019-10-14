@@ -21,13 +21,14 @@ import git
 # Waiting for incoming connection
 print('Waiting for an internet connection, please wait...',end="\r")
 tini = time.time()
-maxDelay = 60 #s
+maxDelay = 30 #s
 result = False
 while time.time()-tini < maxDelay :
     if os.system('ping -c1 google.com') == 0 :
         result = True
         break
     else :
+        time.sleep(1)
         print('Waiting for an internet connection, please wait... (%i)'%round(maxDelay-(time.time()-tini)),end="\r")
         
         
@@ -49,4 +50,6 @@ if result is True :
     
 else :
     # Restart pi
+    print('Impossible to establish a connection. System restarting...')
+    time.sleep(3)
     os.system('sudo shutdown -r now')

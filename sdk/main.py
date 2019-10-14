@@ -6,6 +6,8 @@ Created on Tue Aug 28 11:13:09 2018
 @author: pi
 """
 
+import sys
+print(sys.version)
 
 from .sensors.main import Sensors
 from .images.main import Images

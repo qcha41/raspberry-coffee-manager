@@ -5,10 +5,9 @@ Created on Tue Aug  7 20:36:13 2018
 @author: qchat
 """
 
+# Setting current directory
 import os
-print(__file__)
 currDir = os.path.realpath(os.path.dirname(__file__))
-print(currDir)
 os.chdir(currDir)
 
 debugMode = False 

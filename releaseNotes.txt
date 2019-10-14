@@ -1,0 +1,9 @@
+2.2
+- Added conso button in useraccount panel admin mode to be able to manually add conso on one user account
+- Added a reminder in useraccount is the date is today to ask if the recorded daily conso is correct 
+- Updated the text displayed when looking for wifi connection
+
+
+- Automatic new user when new card detected (now 30sec wait)
+- Pass your card --> Pass your C2N card in red
+- Admin tag can disable auto reboot in case internet is missing

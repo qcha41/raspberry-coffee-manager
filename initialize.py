@@ -16,7 +16,7 @@ print('')
 
 import os
 import time
-import git
+
 
 # Waiting for incoming connection
 print('Waiting for an internet connection, please wait...',end="\r")
@@ -35,14 +35,6 @@ while time.time()-tini < maxDelay :
 if result is True :
     print()
     print('Connected to internet!')
-    print()
-    
-    # Update git directory
-    print('Updating git repository...')
-    time.sleep(3)
-    ans = git.Repo().git.pull()
-    print(ans)
-    print('Update finished!')
     print()
     
     # Starting GUI

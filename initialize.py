@@ -27,7 +27,7 @@ maxDelay = 40 #s
 result = False
 i = 0
 while time.time()-tini < maxDelay :
-    if i<100:#os.system('ping -c1 google.com') == 0 :
+    if i>100:#os.system('ping -c1 google.com') == 0 :
         result = True
         break
     else :

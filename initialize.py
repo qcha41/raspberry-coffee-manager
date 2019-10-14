@@ -39,6 +39,7 @@ if result is True :
     
     # Update git directory
     print('Updating git repository...')
+    time.sleep(1)
     ans = git.Repo().git.pull()
     print(ans)
     print('Update finished!')

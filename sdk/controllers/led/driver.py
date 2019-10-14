@@ -25,8 +25,7 @@ class Led :
                        'orange':(255,150,0),
                        'black':(0,0,0)}
 
-        scriptPath = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))))),'PiBits','ServoBlaster','user')
-        print(scriptPath)
+        loaderFilePath = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))))),'PiBits','ServoBlaster','user')
         os.system("sudo %s/servod --p1pins=13,15,16 --step-size=2us --cycle-time=5000us"%loaderFilePath +" --min=0% --max=100%")
         
     def setColor(self,r,g,b,delay=0.5):

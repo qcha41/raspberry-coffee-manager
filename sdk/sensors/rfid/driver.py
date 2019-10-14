@@ -1,7 +1,5 @@
 # -*- coding: utf8 -*-
 
-import sys
-print('iij',sys.version)
 from pirc522 import RFID as RFID_driver
 from threading import Thread, Event
 import time

@@ -47,7 +47,7 @@ if result is True :
     
     # Starting GUI
     print('Starting GUI...')
-    import interface
+    exec(open("./interface.py").read())
     
 else :
     # Restart pi

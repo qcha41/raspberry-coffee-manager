@@ -12,6 +12,8 @@ maxDelay = 40
 
 print('coucou')
 print('coucou')
+
+time.sleep(10)
         
 
 def isConnected(self):

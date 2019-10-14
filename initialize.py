@@ -28,8 +28,8 @@ while time.time()-tini < maxDelay :
         result = True
         break
     else :
-        time.sleep(1)
         print('Waiting for an internet connection, please wait... (%i)'%round(maxDelay-(time.time()-tini)),end="\r")
+        time.sleep(1)
         
         
 if result is True :

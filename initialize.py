@@ -44,5 +44,6 @@ print(ans)
 print('Update finished!')
 print()
 
-
-time.sleep(50)
+# Starting GUI
+print('Starting GUI...')
+exec(open("./interface.py").read())

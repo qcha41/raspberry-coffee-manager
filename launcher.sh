@@ -2,7 +2,7 @@
 date
 
 python3 initialize.py
-pause
+read
 #python3 start_interface.py
 
 #python3 /home/pi/coffee_manager/scripts/plots.py

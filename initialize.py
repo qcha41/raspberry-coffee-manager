@@ -45,3 +45,4 @@ print('Update finished!')
 print()
 
 
+time.sleep(50)

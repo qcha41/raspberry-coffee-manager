@@ -75,6 +75,9 @@ class Database(RawDatabase):
         data.set_index('id', inplace=True)
         return data.to_dict()['name']
     
+    
+    
+    
     # General info
     
     def getUserInfoList(self,infoType):

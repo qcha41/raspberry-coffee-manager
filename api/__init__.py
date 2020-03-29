@@ -5,7 +5,7 @@ Created on Thu Dec  5 09:02:41 2019
 @author: qchat
 """
 
-import utilities
-
-system = utilities.System()
+from .config_utilities import load_config
+config = load_config()
+del load_config
 

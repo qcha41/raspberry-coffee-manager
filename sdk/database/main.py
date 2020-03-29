@@ -35,6 +35,7 @@ class RawDatabase():
                 self.logger.log(command+' '+str(e))
         self.lock.release()
     
+    
     def read(self,command):
         self.lock.acquire()
         try : 
@@ -49,6 +50,9 @@ class RawDatabase():
     
     def close(self):
         self.dtb.close()
+        
+        
+        
 
 class Database(RawDatabase):
     

@@ -1,6 +1,6 @@
 # Raspberry Coffee Manager
 Raspberry project for coffee caps management automation (stock, user accounts, ..)
-[ONGOING PROJECT]
+[DEV IN PROGRESS]
 
 
 ## Parts used

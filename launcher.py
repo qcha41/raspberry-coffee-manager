@@ -5,32 +5,25 @@ Created on Tue Aug  7 20:36:13 2018
 @author: qchat
 """
 
-# Setting current directory
-import os
-currDir = os.path.realpath(os.path.dirname(__file__))
-os.chdir(currDir)
-
-debugMode = False 
+auto_reboot = False 
 
 import traceback, time, sys
-from PyQt5.QtWidgets import QApplication
+from core.api import email,system
 
 def errorDetected(exctype, value, tb):
     errorStr = str(exctype)+' '+str(value)+'\n'+''.join(traceback.format_tb(tb))
     print(errorStr)
-    sdk.email.sendError(errorStr)
+    email.notify_error(errorStr)
     time.sleep(2)
-    if debugMode is False :
-        sdk.system.restart() 
+    if auto_reboot is True :
+        system.reboot() 
 
 sys.excepthook = errorDetected
 
-from sdk.main import SDK
-sdk = SDK()
-
-from gui.main import GUI
+from PyQt5.QtWidgets import QApplication
+from core.gui.main import GUI
 app = QApplication(sys.argv)
-gui = GUI(sdk)
+gui = GUI()
 gui.show()
 app.exec_()
     

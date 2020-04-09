@@ -2,10 +2,13 @@
 
 This is a raspberry project for group coffee caps management. 
 
+## Features
 
-## Electronic circuit
+## Fabrication
 
-### Parts used
+### Electronic circuit
+
+#### Parts used
 
 - Raspberry Pi 3B+ (https://www.raspberrypi.org/)
 <p align="center"><img src="/docs_ressources/raspberry.jpg" width="300"/></p>
@@ -28,6 +31,6 @@ This is a raspberry project for group coffee caps management.
 - PIR motion sensor HC-SR501 (https://fr.aliexpress.com/item/1874954952.html)
 <p align="center"><img src="/docs_ressources/pir.jpg" width="300"/></p>
 
-### Assembling and wiring
+#### Assembling and wiring
 
-## Raspberry configuration
+### Raspberry configuration

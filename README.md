@@ -21,7 +21,7 @@ Raspberry project for coffee caps management automation (stock, user accounts, .
 <p align="center"><img src="/docs_ressources/led.jpg" width="300"/></p>
 
 - 3 TIP120 power transistors (https://fr.aliexpress.com/item/32264482219.html)
-<p align="center"><img src="/docs_ressources/led.jpg" width="300"/></p>
+<p align="center"><img src="/docs_ressources/tip120.jpg" width="300"/></p>
 
 - PIR motion sensor HC-SR501 (https://fr.aliexpress.com/item/1874954952.html)
 <p align="center"><img src="/docs_ressources/pir.jpg" width="300"/></p>

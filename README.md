@@ -34,3 +34,8 @@ This is a raspberry project for group coffee caps management.
 #### Assembling and wiring
 
 ### Raspberry configuration
+
+## Python dependencies
+## System configuration
+## Installation
+## Configuration

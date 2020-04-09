@@ -202,9 +202,10 @@ def get_caps_price() :
     ''' Returns the current caps price for users '''
     
     caps_remaining = get_caps_remaining()
-    assert caps_remaining > 0, "There is no caps in the stock, impossible to compute the caps price. Add caps first."
-    
-    return round(-get_caps_balance()/caps_remaining,2)
+    if caps_remaining > 0 :    
+        return round(-get_caps_balance()/caps_remaining,2)
+    else :
+        return None
     
 
 def add_caps_operation(label,qty,value):

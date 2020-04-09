@@ -162,35 +162,38 @@ class MainPanel():
         
         ''' Set next user in manual selection box '''
         
-        if self.user_id_list_curr_pos is None : 
-            self.user_id_list_curr_pos = 0
-        else : 
-            self.user_id_list_curr_pos = (self.user_id_list_curr_pos + 1) % len(self.user_id_list)
-        self.update_user_button_label()
+        if len(self.user_id_list)>0 :
+            if self.user_id_list_curr_pos is None : 
+                self.user_id_list_curr_pos = 0
+            else : 
+                self.user_id_list_curr_pos = (self.user_id_list_curr_pos + 1) % len(self.user_id_list)
+            self.update_user_button_label()
         
         
     def previous_user(self):
         
         ''' Set previous user in manual selection box '''
         
-        if self.user_id_list_curr_pos is None : 
-            self.user_id_list_curr_pos = len(self.user_id_list)-1
-        else : 
-            self.user_id_list_curr_pos = (self.user_id_list_curr_pos - 1) % len(self.user_id_list)
-        self.update_user_button_label()
+        if len(self.user_id_list)>0 :
+            if self.user_id_list_curr_pos is None : 
+                self.user_id_list_curr_pos = len(self.user_id_list)-1
+            else : 
+                self.user_id_list_curr_pos = (self.user_id_list_curr_pos - 1) % len(self.user_id_list)
+            self.update_user_button_label()
         
         
     def update_user_button_label(self):
         
         ''' Update user button label '''
         
-        ID = self.user_id_list[self.user_id_list_curr_pos]
-        if User(ID).is_active() :
-            self.gui.main_user_pushButton.setStyleSheet('color: black')
-        else :
-            self.gui.main_user_pushButton.setStyleSheet('color: gray')
-        name = self.user_dict[ID]
-        self.gui.main_user_pushButton.setText(f'{name} ({ID})')       
+        if len(self.user_id_list)>0 :
+            ID = self.user_id_list[self.user_id_list_curr_pos]
+            if User(ID).is_active() :
+                self.gui.main_user_pushButton.setStyleSheet('color: black')
+            else :
+                self.gui.main_user_pushButton.setStyleSheet('color: gray')
+            name = self.user_dict[ID]
+            self.gui.main_user_pushButton.setText(f'{name} ({ID})')       
         
         
     def user_button_clicked(self):

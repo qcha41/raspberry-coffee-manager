@@ -164,9 +164,10 @@ class User :
         ''' Add a caps conso for the user '''
         
         caps_price = system.get_caps_price()
-        timestamp = utilities.get_timestamp()
-        database.write(f'''INSERT INTO caps_operations (timestamp,label,user,qty,value)
-                           VALUES ('{timestamp}', 'Conso', {self.ID}, -1, {caps_price})''')
+        if caps_price is not None :
+            timestamp = utilities.get_timestamp()
+            database.write(f'''INSERT INTO caps_operations (timestamp,label,user,qty,value)
+                               VALUES ('{timestamp}', 'Conso', {self.ID}, -1, {caps_price})''')
         
 
     def get_total_caps_nb(self, year=None):

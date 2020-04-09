@@ -9,6 +9,7 @@ import datetime
 import pandas as pd
 
 from ...api import email
+from ...api import devices
 
 
 class AccountPanel():
@@ -64,7 +65,7 @@ class AccountPanel():
         
         ''' Uninitialize panel '''
         
-        pass
+        devices.led.set_scenario('idle')
     
     
     # Add conso / conso / manual donation
@@ -75,6 +76,7 @@ class AccountPanel():
         ''' Add a conso in this account '''
         
         self.user.add_conso()
+        devices.buzzer.beep()
         balance = self.user.get_balance()
         if balance<0 and self.gui.send_email is True :
             email.notify_negative_balance(self.user.get_email(),self.user.get_name(),balance)
@@ -221,14 +223,18 @@ class AccountPanel():
         if balance > 0 :
             self.gui.account_balance_label.setStyleSheet('color: green; font: bold 30pt')
             text = f'+{balance} \u20ac'
+            devices.led.set_scenario('fixed_green')
         elif balance < 0 :
             self.gui.account_balance_label.setStyleSheet('color: red; font: bold 30pt')
             text = f'{balance} \u20ac'
+            devices.led.set_scenario('low_blinking_orange')
         else : 
             self.gui.account_balance_label.setStyleSheet('color: black; font: bold 30pt')
             text = f'{balance} \u20ac'
+            devices.led.set_scenario('high_blinking_red')
             
         self.gui.account_balance_label.setText(text)
+        
         
         
         

@@ -78,6 +78,7 @@ class LedController(Thread):
             if self.curr_scenario == 'high_blinking_red' :
                 self.apply_color('red',0.2) 
                 self.apply_color('black',0.2)
+            
     
     
 

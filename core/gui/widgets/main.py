@@ -11,7 +11,7 @@ import os
 from ...api import config
 from ...api.database import system
 from ...api.database.users import User
-
+from ...api import devices
 
 class MainPanel():
     
@@ -22,7 +22,7 @@ class MainPanel():
         # Connect signals
         self.gui.main_disable_pushButton.clicked.connect(self.switch_autoconso_state)
         self.gui.main_admin_pushButton.clicked.connect(self.admin_button_pressed)
-        self.gui.main_newuser_pushButton.clicked.connect(self.newuser_button_pressed)
+        self.gui.main_newuser_pushButton.clicked.connect(lambda : self.gui.switch_panel_signal.emit('new_user'))
         
         # System name
         self.gui.main_systemname_label.setText(config['GENERAL']['system_name'])
@@ -54,6 +54,9 @@ class MainPanel():
         
         ''' Initialize panel '''
         
+        # Connect rfid signal
+        devices.rfid.callback = self.tag_detected
+        
         # Update caps price
         self.gui.main_capsprice_label.setText(str(system.get_caps_price())+' \u20ac')
         
@@ -74,7 +77,25 @@ class MainPanel():
         
         ''' Uninitialize panel '''
         
-        pass
+        # Disconnect rfid signal
+        devices.rfid.callback = None
+        
+        
+    # TAG
+    # =========================================================================
+    
+    def tag_detected(self,tag):
+        
+        if tag in system.list_tags() :
+            ID = system.get_user_id_by_tag(tag)
+            self.enter_account(ID)
+        
+        if tag == config['ADMIN']['tag'] :
+            self.gui.switch_panel_signal.emit('admin')
+            
+        else : 
+            self.gui.widgets['new_user'].tag = tag
+            self.gui.switch_panel_signal.emit('new_user')
         
     
     # Admin
@@ -86,27 +107,20 @@ class MainPanel():
         
         keyboard = self.gui.widgets['keyboard']
         keyboard.return_panel = 'main'
-        keyboard.callback_end = self.enter_admin_panel
+        keyboard.callback_end = self.admin_password_return
         keyboard.text_function = lambda value : "Enter admin password:"
         keyboard.requested_type = str
         self.gui.switch_panel_signal.emit('keyboard') 
         
         
-    def enter_admin_panel(self,password):
+    def admin_password_return(self,password):
 
-        ''' Check admin password and open admin panel '''
+        ''' Check admin password and make opening admin panel '''
         
         if password == config['ADMIN']['password'] :
-            self.gui.widgets['keyboard'].return_panel = 'admin'
+            self.gui.widgets['keyboard'].return_panel = 'admin' # will be switched just after by keyboard
         
-    
-    # New user
-    # =========================================================================
-    
-    def newuser_button_pressed(self):
-        
-        self.gui.switch_panel_signal.emit('new_user')
-    
+
     
     
     

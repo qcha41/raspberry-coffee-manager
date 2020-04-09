@@ -24,6 +24,8 @@ class NewUserPanel:
         self.callback_countdown_update = lambda x : self.gui.new_user_return_pushButton.setText(f'Return\n({x})')
         self.callback_countdown_end = self.return_pressed
         
+        # Default value
+        self.tag = None
         
     def start(self):
         
@@ -37,7 +39,7 @@ class NewUserPanel:
         
         ''' Uninitialize panel '''
         
-        pass
+        self.tag = None
     
     
     def confirm_pressed(self):
@@ -48,6 +50,7 @@ class NewUserPanel:
         system.add_user('')
         ID = max(system.get_user_dict().keys())
         self.gui.current_user = User(ID)
+        if self.tag is not None : self.gui.current_user.set_tag(self.tag)
         self.gui.switch_panel_signal.emit('account_setup')
         
         

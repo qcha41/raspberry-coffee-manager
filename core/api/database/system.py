@@ -52,6 +52,12 @@ def list_tags():
     return tuple(database.read("""SELECT tag FROM users
                                    WHERE tag IS NOT NULL""").tag)
     
+def get_user_id_by_tag(tag):
+    
+    assert tag in list_tags(), 'Tag does not exist'
+    return database.read(f"""SELECT id FROM users
+                            WHERE tag={tag}""").iloc[0].id
+    
 
 def get_nb_users(only_active=False):
     

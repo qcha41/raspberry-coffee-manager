@@ -113,6 +113,13 @@ class User :
                            SET tag = {tag}
                            WHERE id = {self.ID}""")
         
+        
+    def remove_tag(self):
+        
+        ''' Remove user's RFID tag '''
+        
+        database.write(f"""UPDATE users SET tag = NULL WHERE id = {self.ID}""")
+    
     
     def get_tag(self):
         

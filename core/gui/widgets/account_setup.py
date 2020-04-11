@@ -5,6 +5,8 @@ Created on Mon Apr  6 08:58:14 2020
 @author: qchat
 """
 
+from ...api.database import system
+from PyQt5.QtCore import QTimer
 
 
 class AccountSetupPanel():
@@ -25,13 +27,20 @@ class AccountSetupPanel():
         self.gui.account_setup_increaseDonation_pushButton.clicked.connect(self.gui.countdown.start)
         self.gui.account_setup_decreaseDonation_pushButton.clicked.connect(self.decrease_donation)
         self.gui.account_setup_decreaseDonation_pushButton.clicked.connect(self.gui.countdown.start)
-        self.gui.account_setup_readtag_pushButton.clicked.connect(self.update_tag)
+        self.gui.account_setup_readtag_pushButton.clicked.connect(self.start_reading_tag)
         self.gui.account_setup_readtag_pushButton.clicked.connect(self.gui.countdown.start)
 
         # Return countdown
         self.callback_countdown_update = lambda x : self.gui.account_setup_return_pushButton.setText(f'Return\n({x})')
         self.callback_countdown_end = self.return_pressed
         
+        # Tag reading
+        self.tag_detected = None
+        self.tag_reading_timer = QTimer()  
+        self.tag_reading_timer.setSingleShot(True)
+        self.tag_reading_timer.setInterval(3000)
+        self.tag_reading_timer.timeout.connect(self.stop_reading_tag)
+        self.gui.account_setup_tagalreadyused_label.setStyleSheet('color: red')
         
         
     def start(self):
@@ -49,7 +58,6 @@ class AccountSetupPanel():
         self.gui.account_setup_email_pushButton.setText(self.user.get_email())
         self.gui.account_setup_shares_label.setText(str(self.user.get_total_shares())+' \u20ac')
         self.update_donation_gui()
-       
         
         # Active state for buttons
         self.active_state_changed()
@@ -57,13 +65,17 @@ class AccountSetupPanel():
         # Return button
         self.gui.countdown.start()
         
+        # Reading tag
+        self.gui.account_setup_tagalreadyused_label.setText('')
+        self.account_setup_readtag_pushButton.setText('Read tag')
+        
 
     
     def stop(self) :
         
         ''' Uninitialize panel '''
         
-        pass
+        self.gui.rfid_tag_detected_signal.disconnect(self.tag_detected_callback)
     
     
     
@@ -71,15 +83,44 @@ class AccountSetupPanel():
     # Buttons
     # =========================================================================   
 
-    def update_tag(self):
+    def start_reading_tag(self) :
         
-        ''' Wait for tag and update it '''
+        ''' Starts tag reading procedure '''
         
-        import numpy 
-        new_tag = abs(int(numpy.random.randn()*1e7))
-        self.user.set_tag(new_tag)
+        self.tag_detected = None
+        self.account_setup_readtag_pushButton.setText('Reading...')
+        self.gui.rfid_tag_detected_signal.connect(self.tag_detected_callback)
+        self.tag_reading_timer.start()
+        
+        
+    def tag_detected_callback(self,tag):
+        
+        ''' Save detected tag and start update '''
+        
+        self.tag_reading_timer.stop()
+        self.tag_detected = tag
+        self.stop_reading_tag()    
+        
+        
+    def stop_tag_reading(self):
+        
+        ''' Update user's tag if not already used '''
+        
+        self.gui.rfid_tag_detected_signal.disconnect(self.tag_detected)
+        self.account_setup_readtag_pushButton.setText('Read tag')
+        
+        if self.tag_detected is not None :
+            if self.tag_detected not in system.list_tags() :
+                self.user.set_tag(self.tag_detected)
+                self.gui.account_setup_tagalreadyused_label.setText('')
+            else :
+                self.gui.account_setup_tagalreadyused_label.setText('Already\nused')
+        else :
+            self.user.remove_tag()
+            self.gui.account_setup_tagalreadyused_label.setText('')
+            
         self.gui.account_setup_tag_label.setText(str(self.user.get_tag()))
-        
+    
     
     def name_button_pressed(self):    
         

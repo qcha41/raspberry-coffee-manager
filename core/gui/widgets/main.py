@@ -55,7 +55,7 @@ class MainPanel():
         ''' Initialize panel '''
         
         # Connect rfid signal
-        devices.rfid.callback = self.tag_detected
+        self.gui.rfid_tag_detected_signal.connect(self.tag_detected_callback)
         
         # Update caps price
         self.gui.main_capsprice_label.setText(str(system.get_caps_price())+' \u20ac')
@@ -78,20 +78,21 @@ class MainPanel():
         ''' Uninitialize panel '''
         
         # Disconnect rfid signal
-        devices.rfid.callback = None
+        self.gui.rfid_tag_detected_signal.disconnect(self.tag_detected_callback)
+        
         
         
     # TAG
     # =========================================================================
     
-    def tag_detected(self,tag):
-        
-        if tag in system.list_tags() :
-            ID = system.get_user_id_by_tag(tag)
-            self.enter_account(ID)
+    def tag_detected_callback(self,tag):
         
         if tag == config['ADMIN']['tag'] :
             self.gui.switch_panel_signal.emit('admin')
+            
+        elif tag in system.list_tags() :
+            ID = system.get_user_id_by_tag(tag)
+            self.enter_account(ID)
             
         else : 
             self.gui.widgets['new_user'].tag = tag

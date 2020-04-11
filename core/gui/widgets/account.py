@@ -61,6 +61,8 @@ class AccountPanel():
         # Return button
         self.gui.countdown.start()
         
+        
+        
     def stop(self):
         
         ''' Uninitialize panel '''

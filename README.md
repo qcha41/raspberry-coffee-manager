@@ -14,7 +14,7 @@ This is a raspberry project to manage a shared coffee caps stock in a group in a
 
 - **Shares**: In order to keep a sufficient working capital for the admin of the group, each user is invited to add shares to the system at the creation of its virtual account. These shares are a refoundable amount of money, that does not appear in the account balance. They help the admin of the system to buy caps in advance and maintain a sufficiently large caps stock. The users without shares are listed in the main panel of the graphical interface.
 
-- **Secondary features**: The system integrates a LED strip whose the color is changing dynamically depending on the scenario (idle, green for positive balance, blinking red for negative balance..). Using a PIR sensor, the system automatically wakes up (turn on screen + led strip) when someone approaches the system and go back to sleep after 1 minute of inactivity.
+- **Secondary features**: The system integrates a LED strip whose the color is changing dynamically depending on the scenario (idle, green for positive balance, blinking red for negative balance..). Using a PIR sensor, the system automatically wakes up (turn on screen + led strip) when someone approaches the system and goes back to sleep after 1 minute of inactivity.
 
 
 ## Fabrication

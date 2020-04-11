@@ -1,10 +1,18 @@
 # Raspberry Coffee Manager [DEV AND DOCS IN PROGRESS]
 
-This is a raspberry project to manage a common coffee caps stock in a team. From one side, the admin notify the manager when new caps are added in the stock (quantity and price). From the other side, each user has an account. Using a personal RFID tag, they notify the manager when they add money in their accounts and when they take a coffee caps from the stock, which deduct a dynamic caps price in their account. If they want, they can also configure an automatic charity donation deducted from their account each time they take a coffee caps.
+This is a raspberry project to manage a shared coffee caps stock in a group in an original way. 
 
-## Features
+Using personal RFID tags, users can manage their own accounts (notify caps conso, add money, review their account activity, ...) through a user-friendly interface. When taking a coffee caps from the shared caps stock, users also notify it to the system, which deduct the associated price from their account. This price is dynamic, and is calculated using the number of remaining caps in the shared stock, and the costs declared to the system by the person in charge of buying caps for the group. This person can manage the system through a prviate admin panel. Users can add money in their acccount in two different way: the recharges (to pay daily coffee when notifying a conso) and the shares (to maintain a sufficient working capital for the administrator). Moreover, users can optionally configure a automatic charity donation (a few cents) that will be deducted additionally each time they notify a conso. Once a sufficient amount has been gathered from all users, the administrator can proceed to the real donation to a charity of the group's choice, and declare it in the admin panel.
 
-- A consomption means that the user take one caps from the common
+From one side, the admin notify the manager when new caps are added in the stock (quantity and price). From the other side, each user has an account. Using a personal RFID tag, they notify the manager when they add money in their accounts and when they take a coffee caps from the stock, which deduct a dynamic caps price in their account. If they want, they can also configure an automatic charity donation deducted from their account each time they take a coffee caps.
+
+## Main features
+- User account panel for adding conso, recharging user account / adding shares, review account activity day by day, managing user informations (name, email, ...). Accessible through user's RFID tag or GUI buttons.
+- Users email notification if their account balance goes below 0€.
+- Optional automatic charity donation.
+- Admin panel for caps stock and account management (add/remove caps and costs, supplies costs, charity donations, check new users recharges/shares). Accessible through admin's RFID tag or GUI buttons + password.
+- System wake up when someone approchaes, using a PIR sensor.
+- LED strip whose color is changing dynamically depending on the scenario.
 
 ## Fabrication
 

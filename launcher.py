@@ -5,8 +5,11 @@ Created on Tue Aug  7 20:36:13 2018
 @author: qchat
 """
 
-auto_reboot = False 
+auto_reboot = True
+thread_monitoring = False
 
+
+# Configure error callback + email notification
 import traceback, time, sys
 from core.api import email,system
 
@@ -20,6 +23,17 @@ def errorDetected(exctype, value, tb):
 
 sys.excepthook = errorDetected
 
+
+
+# Starting thread monitoring if asked
+if thread_monitoring is True :
+    from core.utilities import ThreadsMonitoring
+    thread = ThreadsMonitoring()
+    thread.start()
+
+
+
+# Start GUI
 from PyQt5.QtWidgets import QApplication
 from core.gui.main import GUI
 app = QApplication(sys.argv)

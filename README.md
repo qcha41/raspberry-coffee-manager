@@ -1,18 +1,21 @@
 # Raspberry Coffee Manager [DEV AND DOCS IN PROGRESS]
 
-This is a raspberry project to manage a shared coffee caps stock in a group in an original way. 
+This is a raspberry project to manage a shared coffee caps stock in a group in an original way, using in particular a user-friendly touchscreen graphical interface, and a RFID tag reader.
 
-Using personal RFID tags, users can manage their own accounts (notify caps conso, add money, review their account activity, ...) through a user-friendly interface. When taking a coffee caps from the shared caps stock, users also notify it to the system, which deduct the associated price from their account. This price is dynamic, and is calculated using the number of remaining caps in the shared stock, and the costs declared to the system by the person in charge of buying caps for the group. This person can manage the system through a prviate admin panel. Users can add money in their acccount in two different way: the recharges (to pay daily coffee when notifying a conso) and the shares (to maintain a sufficient working capital for the administrator). Moreover, users can optionally configure a automatic charity donation (a few cents) that will be deducted additionally each time they notify a conso. Once a sufficient amount has been gathered from all users, the administrator can proceed to the real donation to a charity of the group's choice, and declare it in the admin panel.
+## Features
 
-From one side, the admin notify the manager when new caps are added in the stock (quantity and price). From the other side, each user has an account. Using a personal RFID tag, they notify the manager when they add money in their accounts and when they take a coffee caps from the stock, which deduct a dynamic caps price in their account. If they want, they can also configure an automatic charity donation deducted from their account each time they take a coffee caps.
+- **User accounts**: The basic principle of this system is that users notify the system each time they take a coffee caps from the group stock. This is done simply by passing their personal RFID tags near an integrated reader, or by selecting their name on the main panel. The corresponding caps price is then deducted from their own virtual account. The users can recharge their accounts by putting some money in a common group box (or any other method decided in the group), and notify themselves this recharge in the account panel of the graphical interface. In this panel, they can also review the activity of their account day by day, change their name, link their account with another RFID tag, etc.. Finally, to avoid negative accounts, a warning is sent automatically by email to the users whose the account's balance is negative, and their name are listed in the main panel of the graphical interface.
 
-## Main features
-- User account panel for adding conso, recharging user account / adding shares, review account activity day by day, managing user informations (name, email, ...). Accessible through user's RFID tag or GUI buttons.
-- Users email notification if their account balance goes below 0€.
-- Optional automatic charity donation.
-- Admin panel for caps stock and account management (add/remove caps and costs, supplies costs, charity donations, check new users recharges/shares). Accessible through admin's RFID tag or GUI buttons + password.
-- System wake up when someone approchaes, using a PIR sensor.
-- LED strip whose color is changing dynamically depending on the scenario.
+- **Admin panel**: The person in charge of managing the coffee in the group has access to a private admin panel, either by using its admin RFID tag, or by entering a password in the graphical interface. From that panel, the admin can review users operations (ex : account recharges), notify a group caps purchase, a supply purchase, or that some caps are missing in the stock, etc...
+
+- **Dynamical caps price**: The system thus know how many caps have been added in the stock by the admin, and how many were taken by the users. The caps price that is deducted from the virtual accounts is then dynamic, and is simply calculated by dividing the remaining system charges by the remaining number of caps.
+
+- **Charities donations**: More than just managing a caps stock, this project also represents a tool to raise money for charities in a group easily. In their account panel, users can indeed configure an optional automatic donation (a few cents), which is then deducted on their virtual account in addition of the caps price, each time they take a caps from the stock. In parallel, users can also proceed in their account panel to a one-shot donation of the amount of their choice, which is then deducted from their virtual account. The global amount of money raised by all users is they donated by the admin to a real charity (defined by the group), and notified in the admin panel.
+
+- **Shares**: In order to keep a sufficient working capital for the admin of the group, each user is invited to add shares to the system at the creation of its virtual account. These shares are a refoundable amount of money, that does not appear in the account balance. They help the admin of the system to buy caps in advance and maintain a sufficiently large caps stock. The users without shares are listed in the main panel of the graphical interface.
+
+- **Secondary features**: The system integrates a LED strip whose the color is changing dynamically depending on the scenario. Using a PIR sensor, the system automatically wakes up (turn on screen + led strip) when someone approaches the system and go back to sleep after 1 minute of inactivity.
+
 
 ## Fabrication
 

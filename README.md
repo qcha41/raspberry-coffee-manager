@@ -1,8 +1,10 @@
 # Raspberry Coffee Manager [DEV AND DOCS IN PROGRESS]
 
-This is a raspberry project for group coffee caps management. 
+This is a raspberry project to manage a common coffee caps stock in a team. From one side, the admin notify the manager when new caps are added in the stock (quantity and price). From the other side, each user has an account. Using a personal RFID tag, they notify the manager when they add money in their accounts and when they take a coffee caps from the stock, which deduct a dynamic caps price in their account. If they want, they can also configure an automatic charity donation deducted from their account each time they take a coffee caps.
 
 ## Features
+
+- A consomption means that the user take one caps from the common
 
 ## Fabrication
 
@@ -34,3 +36,8 @@ This is a raspberry project for group coffee caps management.
 #### Assembling and wiring
 
 ### Raspberry configuration
+
+## Python dependencies
+## System configuration
+## Installation
+## Configuration

@@ -16,6 +16,11 @@ This is a raspberry project to manage a shared coffee caps stock in a group in a
 
 - **Secondary features**: The system integrates a LED strip whose the color is changing dynamically depending on the scenario (idle, green for positive balance, blinking red for negative balance..). Using a PIR sensor, the system automatically wakes up (turn on screen + led strip) when someone approaches the system and goes back to sleep after 1 minute of inactivity.
 
+## Technical stuf
+
+- The graphical interface opens at Pi startup using cron.
+- The system requires an internet connection (Ethernet/Wifi) to sync date and time (the raspberry doesn't include an RTC module).
+- 
 
 ## Fabrication
 
@@ -43,6 +48,12 @@ This is a raspberry project to manage a shared coffee caps stock in a group in a
 
 - PIR motion sensor HC-SR501 (https://fr.aliexpress.com/item/1874954952.html)
 <p align="center"><img src="/docs_ressources/pir.jpg" width="300"/></p>
+
+- 5V / 3A DC power adaptor (https://www.amazon.fr/BERLS-dalimentation-Adaptateur-connecteurs-r%C3%A9sidentielle/dp/B076Y23T5Z)
+<p align="center"><img src="/docs_ressources/power_adaptor.jpg" width="300"/></p>
+
+- Female DC power connector (https://fr.aliexpress.com/item/32822006069.html)
+<p align="center"><img src="/docs_ressources/power_jack.jpg" width="300"/></p>
 
 #### Assembling and wiring
 

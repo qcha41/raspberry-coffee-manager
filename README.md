@@ -55,6 +55,8 @@ This is a raspberry project to manage a shared coffee caps stock in a group in a
 - Female DC power connector (https://fr.aliexpress.com/item/32822006069.html)
 <p align="center"><img src="/docs_ressources/power_jack.jpg" width="300"/></p>
 
+- Wires
+
 #### Assembling and wiring
 
 ### Raspberry configuration

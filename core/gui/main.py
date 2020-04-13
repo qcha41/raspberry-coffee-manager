@@ -125,6 +125,9 @@ class GUI(QMainWindow):
         if self.current_widget is not None :
             self.current_widget.stop()
         
+        # Terminate api threads
+        devices.stop()
+        
         # Exit
         event.accept()
         

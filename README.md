@@ -61,6 +61,15 @@ This is a raspberry project dedicated to the management of a shared coffee caps 
 
 ### Raspberry configuration
 
+```
+mkdir coffee_manager        # Create main folder
+git clone https://github.com/qcha41/raspberry-coffee-manager.git     # Clone GitHub project
+git clone https://github.com/richardghirst/PiBits.git                # Clone PiBits
+
+```
+
+2) Inside, create the two folders "data" and "raspb
+
 ## Python dependencies
 ## System configuration
 ## Installation

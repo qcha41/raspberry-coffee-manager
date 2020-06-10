@@ -20,7 +20,7 @@ class RfidReader(Thread) :
         self.last_detection_tag = None
         self.last_detection_tag = time.time()
 
-        self.start()
+        
         
  
     

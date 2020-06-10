@@ -28,6 +28,7 @@ class DeviceManager():
         gpio_pin_green_led = int(config['DEVICES']['gpio_pin_green_led'])
         gpio_pin_blue_led = int(config['DEVICES']['gpio_pin_blue_led'])        
         self.led = LedController(pibits_path, gpio_pin_red_led, gpio_pin_green_led, gpio_pin_blue_led)
+        self.led.start()
         
         # Buzzer controller
         gpio_pin_buzzer = int(config['DEVICES']['gpio_pin_buzzer'])
@@ -40,6 +41,7 @@ class DeviceManager():
         
         # RFIF reader
         self.rfid = RfidReader()
+        self.rfid.start()
         
     def stop(self):
         

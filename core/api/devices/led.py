@@ -45,7 +45,7 @@ class LedController(Thread):
         servod_folder_path = os.path.join(self.pibits_path,'ServoBlaster','user')
         os.system(f"sudo {servod_folder_path}/servod --p1pins={self.pins['red']},{self.pins['green']},{self.pins['green']} --step-size=2us --cycle-time=5000us --min=0% --max=100%")
         
-        self.start()
+        
         
     def set_scenario(self,scenario):
         

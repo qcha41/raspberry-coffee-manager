@@ -116,14 +116,16 @@ class AccountSetupPanel():
                 self.gui.account_setup_tagalreadyused_label.setText('')
             else :
                 self.gui.account_setup_tagalreadyused_label.setText('Already\nused')
+            self.gui.account_setup_tag_label.setText(str(self.user.get_tag()))
         else :
             self.delete_tag()
             
-        self.gui.account_setup_tag_label.setText(str(self.user.get_tag()))
+        
     
     def delete_tag(self):
         self.user.remove_tag()
         self.gui.account_setup_tagalreadyused_label.setText('')
+        self.gui.account_setup_tag_label.setText(str(self.user.get_tag()))
         
     def name_button_pressed(self):    
         

@@ -9,7 +9,7 @@ Created on Tue Aug 28 11:13:09 2018
 
 
 from .. import config
-
+import os
 
 class DeviceManager():
     

@@ -29,6 +29,7 @@ class AccountSetupPanel():
         self.gui.account_setup_decreaseDonation_pushButton.clicked.connect(self.gui.countdown.start)
         self.gui.account_setup_readtag_pushButton.clicked.connect(self.start_reading_tag)
         self.gui.account_setup_readtag_pushButton.clicked.connect(self.gui.countdown.start)
+        self.gui.account_setup_deltag_pushButton.clicked.connect(self.delete_tag)
 
         # Return countdown
         self.callback_countdown_update = lambda x : self.gui.account_setup_return_pushButton.setText(f'Return\n({x})')
@@ -116,12 +117,14 @@ class AccountSetupPanel():
             else :
                 self.gui.account_setup_tagalreadyused_label.setText('Already\nused')
         else :
-            self.user.remove_tag()
-            self.gui.account_setup_tagalreadyused_label.setText('')
+            self.delete_tag()
             
         self.gui.account_setup_tag_label.setText(str(self.user.get_tag()))
     
-    
+    def delete_tag(self):
+        self.user.remove_tag()
+        self.gui.account_setup_tagalreadyused_label.setText('')
+        
     def name_button_pressed(self):    
         
         ''' Start a keyboard request for user's name '''

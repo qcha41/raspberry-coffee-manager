@@ -99,7 +99,7 @@ class AccountSetupPanel():
         
         self.tag_reading_timer.stop()
         self.tag_detected = tag
-        self.stop_reading_tag()    
+        self.stop_tag_reading()    
         
         
     def stop_tag_reading(self):

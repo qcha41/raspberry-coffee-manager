@@ -3878,7 +3878,7 @@ operation:</string>
      <widget class="QLabel" name="admin_sumup_label">
       <property name="geometry">
        <rect>
-        <x>800</x>
+        <x>810</x>
         <y>180</y>
         <width>201</width>
         <height>391</height>
@@ -3903,9 +3903,9 @@ operation:</string>
      <widget class="QTableWidget" name="admin_details_table">
       <property name="geometry">
        <rect>
-        <x>185</x>
+        <x>175</x>
         <y>181</y>
-        <width>611</width>
+        <width>631</width>
         <height>391</height>
        </rect>
       </property>

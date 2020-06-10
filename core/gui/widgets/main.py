@@ -6,7 +6,7 @@ Created on Sat Apr  4 22:17:14 2020
 """
 
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtCore import QThread
+from PyQt5.QtCore import QThread, pyqtSignal
 import os
 
 from ...api import config

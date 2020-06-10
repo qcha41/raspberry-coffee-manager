@@ -75,8 +75,8 @@ class AccountSetupPanel():
         
         ''' Uninitialize panel '''
         
-        self.gui.rfid_tag_detected_signal.disconnect(self.tag_detected_callback)
-    
+        try: self.gui.rfid_tag_detected_signal.disconnect(self.tag_detected_callback)
+        except : pass
     
     
     

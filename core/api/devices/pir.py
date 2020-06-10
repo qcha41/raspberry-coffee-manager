@@ -19,7 +19,7 @@ class PirSensor :
         
         GPIO.add_event_detect(self.PIN,GPIO.RISING,callback=self.event_detected,bouncetime=1)
         
-    def event_detected(self):
+    def event_detected(self,a):
         if self.callback is not None : self.callback()
         
     def get_current_state(self):

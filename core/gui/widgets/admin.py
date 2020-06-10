@@ -34,8 +34,10 @@ class AdminPanel():
         # Configure tablew widget
         self.gui.admin_details_table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
         self.gui.admin_details_table.verticalHeader().setVisible(False)
+        self.gui.admin_details_table.cellClicked.connect(self.cell_clicked)
         self.base_item = QTableWidgetItem()
         self.base_item.setTextAlignment(Qt.AlignCenter)
+        self.check_box_dict = None
 
         # Return countdown
         self.callback_countdown_update = lambda x : self.gui.admin_return_pushButton.setText(f'Return\n({x})')
@@ -143,6 +145,8 @@ class AdminPanel():
     
     def show_details(self,display_id):
         
+        self.check_box_dict = {}
+        
         ''' Update the details of the table name selected '''
         
         self.gui.admin_details_table.clear()
@@ -166,7 +170,7 @@ class AdminPanel():
             self.gui.admin_details_table.setFont(fnt)
 
             # Fill table widget
-            for i in range(len(operations)) :
+            for i in range(50) :
                 self.add_base_item(i, 0, str(operations.iloc[i].timestamp))
                 self.add_base_item(i, 1, str(operations.iloc[i].user))
                 self.add_base_item(i, 2, str(operations.iloc[i].label))
@@ -176,6 +180,7 @@ class AdminPanel():
                 checkbox = QCheckBox()
                 checkbox.setChecked(bool(operations.iloc[i].checked))
                 checkbox.stateChanged.connect(lambda state, ID=int(operations.iloc[i].id), checkbox=checkbox : self.checkbox_state_changed(ID,state,checkbox))
+                self.check_box_dict[i] = checkbox
                 hboxlayout = QHBoxLayout(widget)
                 hboxlayout.addWidget(checkbox)
                 hboxlayout.setAlignment(Qt.AlignCenter)
@@ -239,7 +244,14 @@ class AdminPanel():
             sumup += f'To be donated\n{system.get_donation_balance()} \u20ac'
             self.gui.admin_sumup_label.setText(sumup)
                 
-
+            
+            
+    def cell_clicked(self,row,col):
+        
+        if self.gui.admin_display_comboBox.currentText() == 'Accounts' :
+            if col == 4 : 
+                state = self.check_box_dict[row].isChecked()
+                self.check_box_dict[row].setChecked(not state)
             
         
     def checkbox_state_changed(self,ID,state,checkbox):

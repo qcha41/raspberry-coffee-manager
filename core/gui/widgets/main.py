@@ -48,7 +48,7 @@ class MainPanel():
         self.autoconso_state = True
         self.set_autoconso_state(self.autoconso_state)
         
-        
+        self.system_infos_grabber = None
         
     def start(self):
         
@@ -71,7 +71,7 @@ class MainPanel():
         self.set_autoconso_state(True)
             
         # Warnings
-        self.gui.update_system_infos_signal.emit()
+        self.start_update_system_infos()
         
         
         
@@ -130,11 +130,17 @@ class MainPanel():
     # Warnings
     # =========================================================================
     
-    def update_system_infos(self):
+    def start_update_system_infos(self):
+        
+        self.system_infos_grabber = SystemInfosGrabber()
+        self.system_infos_grabber.finished_signal.connect(self.update_system_infos)
+        self.system_infos_grabber.start()
+        
+        
+    def update_system_infos(self,warnings):
         
         ''' Update system infos '''
         
-        warnings = system.get_warnings()
         if len(warnings)>0 : 
             system_infos = '\n'.join(warnings)
             self.gui.main_warnings_textEdit.setStyleSheet('color: red')
@@ -142,7 +148,7 @@ class MainPanel():
             system_infos = 'Everything is fine!'
             self.gui.main_warnings_textEdit.setStyleSheet('color: green')
         self.gui.main_warnings_textEdit.setText(system_infos)
-            
+    
     
     
     # Autoconso state
@@ -236,5 +242,13 @@ class MainPanel():
             self.gui.widgets['account'].add_conso()
     
     
+class SystemInfosGrabber(QThread)
     
-    
+    finished_signal = pyqtSignal(list)
+            
+    def __init__(self):
+        QThread.__init__(self)
+        
+    def run(self):
+        warnings = system.get_warnings()
+        self.finished_signal.emit(warnings)

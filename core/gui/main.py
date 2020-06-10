@@ -26,7 +26,7 @@ class GUI(QMainWindow):
 
     switch_panel_signal = pyqtSignal(str)
     rfid_tag_detected_signal = pyqtSignal(int)
-    update_system_infos_signal = pyqtSignal()
+    update_system_infos_signal = pyqtSignal(list)
 
     def __init__(self):
         

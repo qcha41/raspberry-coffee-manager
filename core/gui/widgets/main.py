@@ -91,7 +91,8 @@ class MainPanel():
         
         if tag == config['ADMIN']['tag'] :
             self.gui.switch_panel_signal.emit('admin')
-            
+        print(tag)
+        print(system.list_tags())
         elif tag in system.list_tags() :
             ID = system.get_user_id_by_tag(tag)
             self.enter_account(ID)

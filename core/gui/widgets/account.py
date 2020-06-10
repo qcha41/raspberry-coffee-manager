@@ -9,7 +9,7 @@ import datetime
 import pandas as pd
 
 from ...api import email
-from ...api import devices
+from ...api.devices import devices
 
 
 class AccountPanel():

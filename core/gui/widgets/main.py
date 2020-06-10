@@ -11,7 +11,6 @@ import os
 from ...api import config
 from ...api.database import system
 from ...api.database.users import User
-from ...api import devices
 
 class MainPanel():
     

@@ -352,18 +352,20 @@ def get_balance():
     
 def get_warnings() :
     
-    balance_list = []
-    shares_list = []
+    return []
     
-    user_dict = get_user_dict(only_active=True)
-    for key in user_dict : 
-        user = User(key)
-        balance = user.get_balance()
-        if balance < 0 : balance_list.append([user_dict[key],balance])
-        shares = user.get_total_shares()
-        if shares == 0 : shares_list.append(f'{user_dict[key]}: No shares')
+    # balance_list = []
+    # shares_list = []
     
-    balance_list = [f'{entry[0]}: {entry[1]} \u20ac' for entry in sorted(balance_list, key=itemgetter(1))]
+    # user_dict = get_user_dict(only_active=True)
+    # for key in user_dict : 
+    #     user = User(key)
+    #     balance = user.get_balance()
+    #     if balance < 0 : balance_list.append([user_dict[key],balance])
+    #     shares = user.get_total_shares()
+    #     if shares == 0 : shares_list.append(f'{user_dict[key]}: No shares')
     
-    return balance_list + shares_list
+    # balance_list = [f'{entry[0]}: {entry[1]} \u20ac' for entry in sorted(balance_list, key=itemgetter(1))]
+    
+    # return balance_list + shares_list
     

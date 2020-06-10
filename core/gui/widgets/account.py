@@ -77,13 +77,14 @@ class AccountPanel():
         
         ''' Add a conso in this account '''
         
-        self.user.add_conso()
-        devices.buzzer.short_beep()
-        balance = self.user.get_balance()
-        if balance<0 and self.gui.send_email is True :
-            email.notify_negative_balance(self.user.get_email(),self.user.get_name(),balance)
-        self.display_balance()
-        self.set_date(datetime.date.today())
+        if self.user.is_active() :
+            self.user.add_conso()
+            devices.buzzer.short_beep()
+            balance = self.user.get_balance()
+            if balance<0 and self.gui.send_email is True :
+                email.notify_negative_balance(self.user.get_email(),self.user.get_name(),balance)
+            self.display_balance()
+            self.set_date(datetime.date.today())
         
 
     def recharge_button_pressed(self):    

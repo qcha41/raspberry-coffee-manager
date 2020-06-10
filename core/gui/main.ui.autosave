@@ -36,7 +36,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="new_user_panel">
      <widget class="QLabel" name="label_6">
@@ -262,9 +262,9 @@ Please wait...</string>
      <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>180</x>
         <y>310</y>
-        <width>211</width>
+        <width>281</width>
         <height>41</height>
        </rect>
       </property>
@@ -314,9 +314,9 @@ Please wait...</string>
      <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>180</x>
         <y>490</y>
-        <width>211</width>
+        <width>281</width>
         <height>41</height>
        </rect>
       </property>
@@ -466,9 +466,9 @@ Please wait...</string>
      <widget class="QPushButton" name="account_setup_shares_pushButton">
       <property name="geometry">
        <rect>
-        <x>680</x>
+        <x>660</x>
         <y>390</y>
-        <width>241</width>
+        <width>261</width>
         <height>61</height>
        </rect>
       </property>

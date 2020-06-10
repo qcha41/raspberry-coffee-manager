@@ -8,6 +8,8 @@ class RfidReader(Thread) :
     
     def __init__(self) :
         
+        Thread.__init__(self)
+        
         self.rdr = RFID_driver()
         
         self.signal = None

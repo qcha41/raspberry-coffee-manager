@@ -61,6 +61,17 @@ This is a raspberry project dedicated to the management of a shared coffee caps 
 
 ### Raspberry configuration
 
+1. Install Python >= 3.6 (https://liftcodeplay.wordpress.com/2017/06/30/how-to-install-python-3-6-on-raspbian-linux-for-raspberry-pi/)
+2. Create an alias python3 for python3.6 (https://debian-facile.org/doc:programmation:bash:alias)
+2. Install this project
+```
+mkdir coffee_manager        # Create main folder
+git clone https://github.com/qcha41/raspberry-coffee-manager.git     # Clone GitHub project
+git clone https://github.com/richardghirst/PiBits.git                # Clone PiBits
+
+```
+3. 
+
 ## Python dependencies
 ## System configuration
 ## Installation

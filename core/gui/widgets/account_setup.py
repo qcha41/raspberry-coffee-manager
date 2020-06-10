@@ -39,7 +39,7 @@ class AccountSetupPanel():
         self.tag_reading_timer = QTimer()  
         self.tag_reading_timer.setSingleShot(True)
         self.tag_reading_timer.setInterval(3000)
-        self.tag_reading_timer.timeout.connect(self.stop_reading_tag)
+        self.tag_reading_timer.timeout.connect(self.gui.stop_tag_reading)
         self.gui.account_setup_tagalreadyused_label.setStyleSheet('color: red')
         
         

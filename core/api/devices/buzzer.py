@@ -15,7 +15,7 @@ class BuzzerController :
         self.pin = gpio_pin
         
         GPIO.setmode(GPIO.BOARD)
-        GPIO.setup(self.PIN, GPIO.OUT)    
+        GPIO.setup(self.pin, GPIO.OUT)    
         
  
     def setEnabled(self,state):

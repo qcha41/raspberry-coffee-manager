@@ -21,7 +21,7 @@ colors = {'red':(255,0,0),
 
 class LedController(Thread):
     
-    def __init__(self) :
+    def __init__(self,pibits_path, gpio_pin_red_led, gpio_pin_green_led, gpio_pin_blue_led) :
         
         Thread.__init__(self, pibits_path, gpio_pin_red_led, gpio_pin_green_led, gpio_pin_blue_led)
         

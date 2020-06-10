@@ -162,7 +162,7 @@ class AdminPanel():
             self.gui.admin_details_table.setRowCount(len(operations))
             self.gui.admin_details_table.setHorizontalHeaderLabels(['Timestamp','User','Label','Value','Checked'])
             fnt = self.gui.admin_details_table.font()
-            fnt.setPointSize(10)
+            fnt.setPointSize(12)
             self.gui.admin_details_table.setFont(fnt)
 
             # Fill table widget

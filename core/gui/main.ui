@@ -3853,9 +3853,9 @@ pi</string>
       <property name="geometry">
        <rect>
         <x>560</x>
-        <y>90</y>
+        <y>80</y>
         <width>171</width>
-        <height>61</height>
+        <height>81</height>
        </rect>
       </property>
       <property name="font">
@@ -3878,16 +3878,16 @@ operation:</string>
      <widget class="QLabel" name="admin_sumup_label">
       <property name="geometry">
        <rect>
-        <x>780</x>
+        <x>800</x>
         <y>180</y>
-        <width>221</width>
+        <width>201</width>
         <height>391</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Microsoft Yi Baiti</family>
-        <pointsize>20</pointsize>
+        <pointsize>18</pointsize>
         <weight>50</weight>
         <bold>false</bold>
         <kerning>true</kerning>
@@ -3905,7 +3905,7 @@ operation:</string>
        <rect>
         <x>185</x>
         <y>181</y>
-        <width>581</width>
+        <width>611</width>
         <height>391</height>
        </rect>
       </property>

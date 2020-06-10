@@ -23,6 +23,8 @@ class DeviceManager():
         # Led controller
         current_script_path = os.path.realpath(os.path.dirname(__file__))
         pibits_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(current_script_path))),'PiBits')
+        print(list(config.keys()))
+        print(list(config['DEVICES'].keys()))
         gpio_pin_red_led = int(config['DEVICES']['gpio_pin_red_led'])
         gpio_pin_green_led = int(config['DEVICES']['gpio_pin_green_led'])
         gpio_pin_blue_led = int(config['DEVICES']['gpio_pin_blue_led'])        

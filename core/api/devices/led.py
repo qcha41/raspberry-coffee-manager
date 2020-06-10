@@ -23,7 +23,7 @@ class LedController(Thread):
     
     def __init__(self,pibits_path, gpio_pin_red_led, gpio_pin_green_led, gpio_pin_blue_led) :
         
-        Thread.__init__(self, pibits_path, gpio_pin_red_led, gpio_pin_green_led, gpio_pin_blue_led)
+        Thread.__init__(self)
         
         self.pins = {'red':gpio_pin_red_led,
                      'green':gpio_pin_green_led,

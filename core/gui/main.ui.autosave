@@ -3853,9 +3853,9 @@ pi</string>
       <property name="geometry">
        <rect>
         <x>560</x>
-        <y>90</y>
+        <y>80</y>
         <width>171</width>
-        <height>61</height>
+        <height>81</height>
        </rect>
       </property>
       <property name="font">

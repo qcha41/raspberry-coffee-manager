@@ -15,10 +15,10 @@ class DeviceManager():
     
     def __init__(self):
         
-        from .buzzer import BuzzerController
-        from .led import LedController
-        from .pir import PirSensor
-        from .rfid import RfidReader
+        from .buzzer_lib import BuzzerController
+        from .led_lib import LedController
+        from .pir_lib import PirSensor
+        from .rfid_lib import RfidReader
         
         # Led controller
         current_script_path = os.path.realpath(os.path.dirname(__file__))

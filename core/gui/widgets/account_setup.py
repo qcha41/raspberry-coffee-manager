@@ -106,7 +106,7 @@ class AccountSetupPanel():
         
         ''' Update user's tag if not already used '''
         
-        self.gui.rfid_tag_detected_signal.disconnect(self.tag_detected)
+        self.gui.rfid_tag_detected_signal.disconnect(self.tag_detected_callback)
         self.gui.account_setup_readtag_pushButton.setText('Read tag')
         
         if self.tag_detected is not None :

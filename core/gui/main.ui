@@ -36,7 +36,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>7</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="new_user_panel">
      <widget class="QLabel" name="label_6">
@@ -758,7 +758,7 @@ used</string>
       <property name="font">
        <font>
         <family>Microsoft Yi Baiti</family>
-        <pointsize>20</pointsize>
+        <pointsize>19</pointsize>
         <weight>50</weight>
         <bold>false</bold>
         <underline>false</underline>
@@ -775,16 +775,16 @@ used</string>
      <widget class="QLabel" name="label_38">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>170</x>
         <y>380</y>
-        <width>121</width>
+        <width>141</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Microsoft Yi Baiti</family>
-        <pointsize>20</pointsize>
+        <pointsize>19</pointsize>
         <weight>50</weight>
         <bold>false</bold>
         <underline>false</underline>
@@ -827,16 +827,16 @@ used</string>
      <widget class="QLabel" name="label_40">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>170</x>
         <y>420</y>
-        <width>121</width>
+        <width>141</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Microsoft Yi Baiti</family>
-        <pointsize>20</pointsize>
+        <pointsize>19</pointsize>
         <weight>50</weight>
         <bold>false</bold>
         <underline>false</underline>
@@ -853,16 +853,16 @@ used</string>
      <widget class="QLabel" name="label_41">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>170</x>
         <y>460</y>
-        <width>121</width>
+        <width>141</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Microsoft Yi Baiti</family>
-        <pointsize>20</pointsize>
+        <pointsize>19</pointsize>
         <weight>50</weight>
         <bold>false</bold>
         <underline>false</underline>
@@ -1603,7 +1603,7 @@ used</string>
       <property name="font">
        <font>
         <family>Microsoft Yi Baiti</family>
-        <pointsize>19</pointsize>
+        <pointsize>20</pointsize>
         <weight>50</weight>
         <bold>false</bold>
         <underline>false</underline>
@@ -1798,16 +1798,16 @@ used</string>
      <widget class="QLabel" name="label_47">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>170</x>
         <y>500</y>
-        <width>121</width>
+        <width>141</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Microsoft Yi Baiti</family>
-        <pointsize>20</pointsize>
+        <pointsize>19</pointsize>
         <weight>50</weight>
         <bold>false</bold>
         <underline>false</underline>
@@ -3878,9 +3878,9 @@ operation:</string>
      <widget class="QLabel" name="admin_sumup_label">
       <property name="geometry">
        <rect>
-        <x>810</x>
+        <x>800</x>
         <y>180</y>
-        <width>201</width>
+        <width>211</width>
         <height>391</height>
        </rect>
       </property>
@@ -3905,7 +3905,7 @@ operation:</string>
        <rect>
         <x>175</x>
         <y>181</y>
-        <width>631</width>
+        <width>621</width>
         <height>391</height>
        </rect>
       </property>

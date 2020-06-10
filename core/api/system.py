@@ -21,7 +21,6 @@ def reboot():
     
     ''' Send reboot command to shell '''
     
-    print('reboot')
     os.system('sudo shutdown -r now')
     
 

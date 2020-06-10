@@ -20,7 +20,7 @@ def load_config():
     if os.path.exists(config_file_path) is True : 
         config = configparser.ConfigParser()
         config.read(config_file_path)
-    else : 
+    else :
         raise ValueError(f'Configuration file missing in data folder: {config_file_path}')
     
     return config

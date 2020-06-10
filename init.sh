@@ -1,1 +1,0 @@
-echo realpath "$0"

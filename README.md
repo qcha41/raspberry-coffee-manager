@@ -62,7 +62,7 @@ This is a raspberry project dedicated to the management of a shared coffee caps 
 ### Raspberry configuration
 
 1. Install Python >= 3.6 (https://installvirtual.com/how-to-install-python-3-8-on-raspberry-pi-raspbian/)
-2. Install python package pandas, numpy, RPi.GPIO, pi-rc522, sqlite3
+2. Install python package pandas, numpy, RPi.GPIO, pi-rc522, sqlite3, pyqt5
 2. Install this project
 ```
 mkdir coffee_manager                                                  # Create main folder

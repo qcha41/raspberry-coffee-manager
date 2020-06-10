@@ -5,7 +5,7 @@ Created on Tue Aug  7 20:36:13 2018
 @author: qchat
 """
 
-auto_reboot = True
+auto_reboot = False#True
 thread_monitoring = False
 
 

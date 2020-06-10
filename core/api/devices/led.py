@@ -43,7 +43,7 @@ class LedController(Thread):
 
         self.pibits_path = pibits_path
         servod_folder_path = os.path.join(self.pibits_path,'ServoBlaster','user')
-        os.system(f"sudo {servod_folder_path}/servod --p1pins={self.pins['red']},{self.pins['green']},{self.pins['green']} --step-size=2us --cycle-time=5000us --min=0% --max=100%")
+        os.system(f"{servod_folder_path}/servod --p1pins={self.pins['red']},{self.pins['green']},{self.pins['blue']} --step-size=2us --cycle-time=5000us --min=0% --max=100%")
         
         
         
@@ -101,9 +101,9 @@ class LedController(Thread):
             for i in range(len(r_list)) :
                 tini = time.time()
                 command = ''
-                command += f"sudo echo {self.pins['red']}={round(self.imax*r_list[i]/255*100,2)}% > /dev/servoblaster;"
-                command += f"sudo echo {self.pins['green']}={round(self.imax*g_list[i]/255*100,2)}% > /dev/servoblaster;"
-                command += f"sudo echo {self.pins['blue']}={round(self.imax*b_list[i]/255*100,2)}% > /dev/servoblaster;"
+                command += f"echo {self.pins['red']}={round(self.imax*r_list[i]/255*100,2)}% > /dev/servoblaster;"
+                command += f"echo {self.pins['green']}={round(self.imax*g_list[i]/255*100,2)}% > /dev/servoblaster;"
+                command += f"echo {self.pins['blue']}={round(self.imax*b_list[i]/255*100,2)}% > /dev/servoblaster;"
                 print(command)
                 os.system(command)
                 time.sleep(self.delay_step-(time.time()-tini))

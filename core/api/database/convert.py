@@ -105,7 +105,7 @@ def reset_and_convert_old_version(oldDBpath,newDBpath):
     # -------------------------------------------------------------------------
     for i in range(len(users)) :
         user = users.iloc[i]
-        if np.isnan(user.tag) : user.tag = 'NULL'
+        if pd.isnull(user.tag) : user.tag = 'NULL'
         if not isinstance(user.email,str) : user.email = 'NULL'
         newDtb.write(f"""INSERT INTO users (id,name,tag,email,auto_donation) 
                          VALUES ({user.id},{user["name"]},{user.tag},{user.email},{user.auto_donation}) """)
@@ -117,13 +117,13 @@ def reset_and_convert_old_version(oldDBpath,newDBpath):
     
     for i in range(len(caps_operations)) :
         op = caps_operations.iloc[i]
-        if np.isnan(op.user) : op.user = 'NULL'
+        if pd.isnull(op.user) : op.user = 'NULL'
         newDtb.write(f"""INSERT INTO caps_operations (timestamp,label,user,qty,value) 
                          VALUES ({op.timestamp},{op.label},{op.user},{op.qty},{op.value}) """)
    
     for i in range(len(donation_operations)) :
         op = donation_operations.iloc[i]
-        if np.isnan(op.user) : op.user = 'NULL'
+        if pd.isnull(op.user) : op.user = 'NULL'
         newDtb.write(f"""INSERT INTO donation_operations (timestamp,label,user,value) 
                          VALUES ({op.timestamp},{op.label},{op.user},{op.value}) """)
    
@@ -135,5 +135,5 @@ def reset_and_convert_old_version(oldDBpath,newDBpath):
     newDtb.close()
     
 
-reset_and_convert_old_version(r'C:\Users\qchat\Documents\GitHub\data\database_old.db',
-                              r'C:\Users\qchat\Documents\GitHub\data\database.db')
+reset_and_convert_old_version('database_old.db',
+                              'database.db')

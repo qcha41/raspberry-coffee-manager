@@ -22,7 +22,7 @@ class MainPanel():
         self.gui.main_disable_pushButton.clicked.connect(self.switch_autoconso_state)
         self.gui.main_admin_pushButton.clicked.connect(self.admin_button_pressed)
         self.gui.main_newuser_pushButton.clicked.connect(lambda : self.gui.switch_panel_signal.emit('new_user'))
-        self.gui.update_system_infos_signal.connect(self.update_system_infos_signal)
+        self.gui.update_system_infos_signal.connect(self.update_system_infos)
         
         # System name
         self.gui.main_systemname_label.setText(config['GENERAL']['system_name'])

@@ -67,7 +67,7 @@ class AccountSetupPanel():
         
         # Reading tag
         self.gui.account_setup_tagalreadyused_label.setText('')
-        self.account_setup_readtag_pushButton.setText('Read tag')
+        self.gui.account_setup_readtag_pushButton.setText('Read tag')
         
 
     
@@ -88,7 +88,7 @@ class AccountSetupPanel():
         ''' Starts tag reading procedure '''
         
         self.tag_detected = None
-        self.account_setup_readtag_pushButton.setText('Reading...')
+        self.gui.account_setup_readtag_pushButton.setText('Reading...')
         self.gui.rfid_tag_detected_signal.connect(self.tag_detected_callback)
         self.tag_reading_timer.start()
         
@@ -107,7 +107,7 @@ class AccountSetupPanel():
         ''' Update user's tag if not already used '''
         
         self.gui.rfid_tag_detected_signal.disconnect(self.tag_detected)
-        self.account_setup_readtag_pushButton.setText('Read tag')
+        self.gui.account_setup_readtag_pushButton.setText('Read tag')
         
         if self.tag_detected is not None :
             if self.tag_detected not in system.list_tags() :

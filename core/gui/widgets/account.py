@@ -230,11 +230,11 @@ class AccountPanel():
         elif balance < 0 :
             self.gui.account_balance_label.setStyleSheet('color: red; font: bold 30pt')
             text = f'{balance} \u20ac'
-            devices.led.set_scenario('low_blinking_orange')
+            devices.led.set_scenario('high_blinking_red')
         else : 
             self.gui.account_balance_label.setStyleSheet('color: black; font: bold 30pt')
             text = f'{balance} \u20ac'
-            devices.led.set_scenario('high_blinking_red')
+            devices.led.set_scenario('low_blinking_orange')
             
         self.gui.account_balance_label.setText(text)
         

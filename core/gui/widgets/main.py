@@ -22,6 +22,7 @@ class MainPanel():
         self.gui.main_disable_pushButton.clicked.connect(self.switch_autoconso_state)
         self.gui.main_admin_pushButton.clicked.connect(self.admin_button_pressed)
         self.gui.main_newuser_pushButton.clicked.connect(lambda : self.gui.switch_panel_signal.emit('new_user'))
+        self.gui.update_system_infos_signal.connect(self.update_system_infos_signal)
         
         # System name
         self.gui.main_systemname_label.setText(config['GENERAL']['system_name'])
@@ -53,7 +54,7 @@ class MainPanel():
         
         ''' Initialize panel '''
         
-        # Connect rfid signal
+        # Connect signals
         self.gui.rfid_tag_detected_signal.connect(self.tag_detected_callback)
         
         # Update caps price
@@ -70,7 +71,9 @@ class MainPanel():
         self.set_autoconso_state(True)
             
         # Warnings
-        self.update_system_infos()
+        self.gui.update_system_infos_signal.emit()
+        
+        
         
     def stop(self):
         
@@ -231,9 +234,6 @@ class MainPanel():
         self.gui.switch_panel_signal.emit('account')
         if self.autoconso_state is True :
             self.gui.widgets['account'].add_conso()
-    
-    
-    
     
     
     

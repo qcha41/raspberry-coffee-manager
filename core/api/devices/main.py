@@ -21,7 +21,8 @@ class DeviceManager():
         from .rfid import RfidReader
         
         # Led controller
-        pibits_path = config['DEVICES']['pibits_path']
+        current_script_path = os.path.realpath(os.path.dirname(__file__))
+        pibits_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(current_script_path))),'PiBits')
         gpio_pin_red_led = int(config['DEVICES']['gpio_pin_red_led'])
         gpio_pin_green_led = int(config['DEVICES']['gpio_pin_green_led'])
         gpio_pin_blue_led = int(config['DEVICES']['gpio_pin_blue_led'])        

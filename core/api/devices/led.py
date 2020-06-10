@@ -84,7 +84,7 @@ class LedController(Thread):
 
     def apply_color(self,color,delay):
         
-        if color == self.color :
+        if color == self.curr_color :
             time.sleep(delay)
             
         else :             

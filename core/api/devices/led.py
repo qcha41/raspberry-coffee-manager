@@ -104,6 +104,7 @@ class LedController(Thread):
                 command += f"sudo echo {self.pins['red']}={self.imax*r_list[i]/255*100}% > /dev/servoblaster;"
                 command += f"sudo echo {self.pins['green']}={self.imax*g_list[i]/255*100}% > /dev/servoblaster;"
                 command += f"sudo echo {self.pins['blue']}={self.imax*b_list[i]/255*100}% > /dev/servoblaster;"
+                print(command)
                 os.system(command)
                 time.sleep(self.delay_step-(time.time()-tini))
             

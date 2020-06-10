@@ -83,9 +83,7 @@ class LedController(Thread):
     
 
     def apply_color(self,color,delay):
-        
-        print('pass')
-        
+                
         if color == self.curr_color :
             time.sleep(delay)
             
@@ -110,7 +108,7 @@ class LedController(Thread):
                 time.sleep(self.delay_step-(time.time()-tini))
             
             # Save last state
-            self.color = color
+            self.curr_color = color
 
         
 

@@ -20,7 +20,7 @@ from .widgets.admin import AdminPanel
 import os
 from datetime import datetime as dt
 
-from ...api import devices
+from ..api import devices
 
 class GUI(QMainWindow):
 

@@ -21,7 +21,7 @@ def load_config():
         config = configparser.ConfigParser()
         config.read(config_file_path)
     else :
-        raise ValueError(f'Configuration file missing in data folder: {config_file_path}')
+        raise ValueError(f"Configuration file missing in data folder: {config_file_path}")
     
     return config
         

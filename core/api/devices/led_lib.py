@@ -105,7 +105,8 @@ class LedController(Thread):
                 command += f"echo P1-{self.pins['green']}={round(self.imax*g_list[i]/255*100,2)}% > /dev/servoblaster;"
                 command += f"echo P1-{self.pins['blue']}={round(self.imax*b_list[i]/255*100,2)}% > /dev/servoblaster;"
                 os.system(command)
-                time.sleep(self.delay_step-(time.time()-tini))
+                try : time.sleep(self.delay_step-(time.time()-tini)) #may be negative some times
+                except : pass
             
             # Save last state
             self.curr_color = color

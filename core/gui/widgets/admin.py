@@ -153,6 +153,9 @@ class AdminPanel():
         self.gui.admin_details_table.setColumnCount(0)
         self.gui.admin_details_table.setRowCount(0)
         self.gui.admin_sumup_label.setText('')
+        fnt = self.gui.admin_details_table.font()
+        fnt.setPointSize(12)
+        self.gui.admin_details_table.setFont(fnt)
 
         display_name = self.gui.admin_display_comboBox.currentText()        
         if display_name == 'Accounts':
@@ -163,11 +166,8 @@ class AdminPanel():
 
             # Configure table widget
             self.gui.admin_details_table.setColumnCount(5)
-            self.gui.admin_details_table.setRowCount(len(operations))
+            self.gui.admin_details_table.setRowCount(50)
             self.gui.admin_details_table.setHorizontalHeaderLabels(['Timestamp','User','Label','Value','Checked'])
-            fnt = self.gui.admin_details_table.font()
-            fnt.setPointSize(12)
-            self.gui.admin_details_table.setFont(fnt)
 
             # Fill table widget
             for i in range(50) :

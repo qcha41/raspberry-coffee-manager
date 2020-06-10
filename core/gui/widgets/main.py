@@ -241,7 +241,7 @@ class MainPanel():
             self.gui.widgets['account'].add_conso()
     
     
-class SystemInfosGrabber(QThread)
+class SystemInfosGrabber(QThread):
     
     finished_signal = pyqtSignal(list)
             

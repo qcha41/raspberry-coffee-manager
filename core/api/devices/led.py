@@ -84,6 +84,8 @@ class LedController(Thread):
 
     def apply_color(self,color,delay):
         
+        print('pass')
+        
         if color == self.curr_color :
             time.sleep(delay)
             
@@ -104,7 +106,6 @@ class LedController(Thread):
                 command += f"echo P1-{self.pins['red']}={round(self.imax*r_list[i]/255*100,2)}% > /dev/servoblaster;"
                 command += f"echo P1-{self.pins['green']}={round(self.imax*g_list[i]/255*100,2)}% > /dev/servoblaster;"
                 command += f"echo P1-{self.pins['blue']}={round(self.imax*b_list[i]/255*100,2)}% > /dev/servoblaster;"
-                print(command)
                 os.system(command)
                 time.sleep(self.delay_step-(time.time()-tini))
             

@@ -30,7 +30,7 @@ class PirSensor :
         
 if __name__ == '__main__' :
     
-    def event(o):
+    def event():
         print('Event callback ', GPIO.input(a.PIN))
 
     a = PirSensor(31)

@@ -131,6 +131,9 @@ class GUI(QMainWindow):
         # Exit
         event.accept()
         
+        # Close python
+        pid = os.system('pgrep python')
+        os.system('sudo kill -sigterm %i'%pid) 
 
 
 

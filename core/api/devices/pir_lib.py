@@ -35,6 +35,7 @@ if __name__ == '__main__' :
 
     a = PirSensor(31)
     a.callback = event
+    
     import time
     while True : 
         time.sleep(1)

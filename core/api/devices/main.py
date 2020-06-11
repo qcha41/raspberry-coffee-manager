@@ -9,6 +9,8 @@ Created on Tue Aug 28 11:13:09 2018
 
 
 from .. import config
+from .. import system 
+
 import os
 
 class DeviceManager():
@@ -37,7 +39,7 @@ class DeviceManager():
         # PIR sensor
         gpio_pin_pir = int(config['DEVICES']['gpio_pin_pir'])
         self.pir = PirSensor(gpio_pin_pir)
-        self.pir.callback = lambda : self.led.set_idle_color('white') 
+        self.pir.callback = self.wake_up
         
         # RFIF reader
         self.rfid = RfidReader()
@@ -47,3 +49,8 @@ class DeviceManager():
         
         self.led.stop()
         self.rfid.stop()
+        
+    def wake_up(self):
+        
+        self.led.set_idle_color('white')
+        self.awake_screen()

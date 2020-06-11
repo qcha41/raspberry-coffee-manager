@@ -54,7 +54,6 @@ class LedController(Thread):
             self.ilde_last_change_time = time.time()
         
     def set_idle_color(self,color):
-        
         self.idle_color = color
         self.ilde_last_change_time = time.time()
 

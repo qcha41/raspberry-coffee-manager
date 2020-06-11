@@ -154,7 +154,7 @@ class AdminPanel():
         self.gui.admin_details_table.setRowCount(0)
         self.gui.admin_sumup_label.setText('')
         fnt = self.gui.admin_details_table.font()
-        fnt.setPointSize(13)
+        fnt.setPointSize(11)
         self.gui.admin_details_table.setFont(fnt)
 
         display_name = self.gui.admin_display_comboBox.currentText()        

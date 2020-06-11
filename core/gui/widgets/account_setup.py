@@ -209,7 +209,7 @@ class AccountSetupPanel():
         self.gui.account_setup_shares_pushButton.setEnabled(state)
         self.gui.account_setup_decreaseDonation_pushButton.setEnabled(state)
         self.gui.account_setup_increaseDonation_pushButton.setEnabled(state)
-            
+        self.gui.account_setup_deltag_pushButton.setEnabled(state)
             
     def active_state_changed(self):
         

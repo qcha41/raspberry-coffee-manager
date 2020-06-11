@@ -28,7 +28,7 @@ def awake_screen():
     
     ''' Send awake screen command to shell '''
     
-    os.system("xset dpms force on")
+    #os.system("xset dpms force on")
         
   
 def is_connected():

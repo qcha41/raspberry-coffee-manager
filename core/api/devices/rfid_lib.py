@@ -51,7 +51,7 @@ class RfidReader(Thread) :
                 self.last_detection_tag = tag
                 self.last_detection_time = time.time()
                 if self.callback is not None : self.callback(tag)
-                print(tag)
+                print(tag,type(tag))
                 if self.signal is not None : self.signal.emit(tag)
             else :
                 time.sleep(0.2)

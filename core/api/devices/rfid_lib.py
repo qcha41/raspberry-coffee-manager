@@ -40,7 +40,6 @@ class RfidReader(Thread) :
                 (error, tag) = self.rdr.anticoll()
                 if not error:
                     tag = int(''.join([str(i) for i in tag]))
-                    print(tag)
                     if tag != self.last_detection_tag :
                         valid_tag = True
                     else : 

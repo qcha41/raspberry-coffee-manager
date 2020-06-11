@@ -25,7 +25,7 @@ from ..api.devices import devices
 class GUI(QMainWindow):
 
     switch_panel_signal = pyqtSignal(str)
-    rfid_tag_detected_signal = pyqtSignal(int)
+    rfid_tag_detected_signal = pyqtSignal(str)
 
     def __init__(self):
         

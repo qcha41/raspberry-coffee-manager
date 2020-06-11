@@ -89,10 +89,11 @@ class MainPanel():
     
     def tag_detected_callback(self,tag):
         
+        print(tag,type(tag))
+        
         if tag == int(config['ADMIN']['tag']) :
             self.gui.switch_panel_signal.emit('admin')
         
-        print(tag,type(tag))
         elif tag in system.list_tags() :
             ID = system.get_user_id_by_tag(tag)
             self.enter_account(ID)

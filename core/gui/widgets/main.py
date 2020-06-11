@@ -88,8 +88,9 @@ class MainPanel():
     # =========================================================================
     
     def tag_detected_callback(self,tag):
+        
         tag = int(tag)
-        print(tag,type(tag))
+        
         if tag == int(config['ADMIN']['tag']) :
             self.gui.switch_panel_signal.emit('admin')
         

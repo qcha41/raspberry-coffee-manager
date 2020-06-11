@@ -99,7 +99,7 @@ class AccountSetupPanel():
         ''' Save detected tag and start update '''
         
         self.tag_reading_timer.stop()
-        self.tag_detected = tag
+        self.tag_detected = int(tag)
         self.stop_tag_reading()    
         
         

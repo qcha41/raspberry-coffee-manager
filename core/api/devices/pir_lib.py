@@ -36,6 +36,6 @@ if __name__ == '__main__' :
     a = PirSensor(31)
     a.callback = event
     
-    while True :
-        print(a.get_current_state())
+    #while True :
+    #    print(a.get_current_state())
 

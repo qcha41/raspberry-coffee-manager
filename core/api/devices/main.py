@@ -53,4 +53,4 @@ class DeviceManager():
     def wake_up(self):
         
         self.led.set_idle_color('white')
-        self.awake_screen()
+        system.awake_screen()

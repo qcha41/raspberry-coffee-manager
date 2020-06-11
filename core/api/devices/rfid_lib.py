@@ -66,4 +66,6 @@ if __name__ == "__main__" :
     
     a=RfidReader()
     a.callback = print
-    
+    import time
+    while True : 
+        time.sleep(1)

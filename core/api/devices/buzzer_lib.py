@@ -39,14 +39,14 @@ class BuzzerController :
         
         ''' Produce a short beep '''
         
-        self.beep(0.1)
+        self.beep(0.05)
         
         
     def long_beep(self):
         
         ''' Produce a long beep '''
         
-        self.beep(1)
+        self.beep(0.5)
         
 
 

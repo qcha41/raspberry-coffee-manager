@@ -69,7 +69,7 @@ class GUI(QMainWindow):
         self.current_user = None
         
         # Send email state
-        self.send_email = False
+        self.send_email = True
         
         # Initialize by waiting for internet
         self.switch_panel('startup')

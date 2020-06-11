@@ -36,7 +36,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>7</number>
     </property>
     <widget class="QWidget" name="new_user_panel">
      <widget class="QLabel" name="label_6">

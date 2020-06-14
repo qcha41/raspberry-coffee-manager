@@ -70,7 +70,6 @@ git clone https://github.com/richardghirst/PiBits.git                 # Clone Pi
 git clone https://github.com/qcha41/raspberry-coffee-manager.git      # Clone GitHub project
 bash raspberry-coffee-manager/install.sh                              # Auto-configuration
 ```
-3. 
 
 ## Python dependencies
 ## System configuration

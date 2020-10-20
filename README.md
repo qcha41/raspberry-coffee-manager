@@ -1,6 +1,9 @@
-# Raspberry Coffee Manager [DEV AND DOCS IN PROGRESS]
+# Raspberry Coffee Manager
 
-This is a raspberry project dedicated to the management of a shared coffee caps stock in a group, using in particular a user-friendly touchscreen interface, and a RFID tag reader.
+This is a raspberry project dedicated to the management of a shared coffee caps stock in a group through a user-friendly touchscreen interface and a RFID tag reader.
+
+<p align="center"><img src="/docs_ressources/general_view.jpg" width="600"/></p>
+<p align="center"><img src="/docs_ressources/opened_view.jpg" width="600"/></p>
 
 ## Features
 
@@ -16,15 +19,19 @@ This is a raspberry project dedicated to the management of a shared coffee caps 
 
 - **Secondary features**: The system integrates a LED strip whose the color is changing dynamically depending on the scenario (idle, green for positive balance, blinking red for negative balance..). Using a PIR sensor, the system automatically wakes up (turn on screen + led strip) when someone approaches the system, and goes back to sleep after 1 minute of inactivity.
 
-## Technical stuf
+## Screenshots
+
+<p align="center"><img src="/docs_ressources/main_panel.jpg" width="500"/><br><i>Main panel</i></p>
+<p align="center"><img src="/docs_ressources/user_panel.jpg" width="500"/><br><i>User account panel</i></p>
+<p align="center"><img src="/docs_ressources/stats_panel.jpg" width="500"/><br><i>User statistics panel</i></p>
+<p align="center"><img src="/docs_ressources/config_panel.jpg" width="500"/><br><i>User configuration panel</i></p>
+<p align="center"><img src="/docs_ressources/admin_panel.jpg" width="500"/><br><i>Administration panel</i></p>
+<p align="center"><img src="/docs_ressources/keyboard_panel.jpg" width="500"/><br><i>Touchscreen keyboard</i></p>
+
+## Technical points
 
 - The graphical interface opens at Pi startup using cron.
 - The system requires an internet connection (Ethernet/Wifi) to sync date and time (the raspberry doesn't include an RTC module).
-- 
-
-## Fabrication
-
-### Electronic circuit
 
 #### Parts used
 
@@ -57,8 +64,6 @@ This is a raspberry project dedicated to the management of a shared coffee caps 
 
 - Wires
 
-#### Assembling and wiring
-
 ### Raspberry configuration
 
 1. Install Python >= 3.6 (https://installvirtual.com/how-to-install-python-3-8-on-raspberry-pi-raspbian/)
@@ -70,8 +75,3 @@ git clone https://github.com/richardghirst/PiBits.git                 # Clone Pi
 git clone https://github.com/qcha41/raspberry-coffee-manager.git      # Clone GitHub project
 bash raspberry-coffee-manager/install.sh                              # Auto-configuration
 ```
-
-## Python dependencies
-## System configuration
-## Installation
-## Configuration
